@@ -22,6 +22,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: api
+    #restart: unless-stopped
     volumes:
       - ./opbackend_tf:/var/www/html
       - ./php/custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini
@@ -36,6 +37,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: web-admin
+    #restart: unless-stopped
     volumes:
       - ./opfe-bo:/var/www/html
       - ./php/custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini
@@ -51,6 +53,7 @@ services:
   web-aff:
     image: node:18.16
     container_name: web-aff
+    #restart: unless-stopped
     networks:
       - net
     ports:
@@ -68,6 +71,7 @@ services:
   web-member:
     image: node:18.16
     container_name: web-member
+    #restart: unless-stopped
     networks:
       - net
     ports:
